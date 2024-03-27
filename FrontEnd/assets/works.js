@@ -1,4 +1,4 @@
-const works_API = "http://localhost:5678/api/" + "works";
+const works_API = "http://localhost:5678/api/works";
 const gallery = document.querySelector(".gallery");
 
 //Nettoyage de la galerie
