@@ -145,17 +145,18 @@ li:hover {
 	border: 1.5px solid #1D6154;
 	border-radius: 50px;
 	height: 38px;
+	text-decoration: none;
+}
+.filter-all {
+	width: 113px;
 }
 .filter-1 {
 	width: 110px;
 }
 .filter-2 {
-	width: 110px;
-}
-.filter-3 {
 	width: 175px;
 }
-.filter-4 {
+.filter-3 {
 	width: 222px;
 }
 .filter-selected {
