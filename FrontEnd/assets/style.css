@@ -129,12 +129,13 @@ li:hover {
 
 .filters {
 	display: flex;
+	flex-direction: row;
 	gap: 12px;
 	justify-content: center;
 	padding: 20px 0 50px 0;
-}
+} 
 
-.btn-filter {
+.filters-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -145,20 +146,21 @@ li:hover {
 	border: 1.5px solid #1D6154;
 	border-radius: 50px;
 	height: 38px;
+	padding: 0 20px 0 20px;
 	text-decoration: none;
 }
-.filter-all {
-	width: 113px;
+
+.filters-button:hover {
+	color: #FFFEF8;
+	background-color: #1D6154;
 }
-.filter-1 {
-	width: 110px;
+
+.filters-button:active {
+	color: #FFFEF8;
+	background-color: #1D6154;
+	opacity:0.6;
 }
-.filter-2 {
-	width: 175px;
-}
-.filter-3 {
-	width: 222px;
-}
+
 .filter-selected {
 	color: #FFFEF8;
 	background-color: #1D6154;
