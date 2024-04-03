@@ -35,6 +35,10 @@ body {
 ol, ul {
 	list-style: none;
 }
+.img-instagram {
+	height:19.35px;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -96,9 +100,24 @@ nav li {
 	font-size: 1.2em;
 }
 
+li a {
+	text-decoration: none;
+	color: black;
+}
+
+
 li:hover {
 	color: #B1663C;
 }
+
+li a:hover {
+	color: #B1663C;
+}
+
+.login-header-selected {
+	font-weight: bold;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -210,6 +229,8 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
+
+
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -227,3 +248,54 @@ footer nav ul {
 	margin: 2em
 }
 
+
+
+
+/*page de login*/
+
+#login {
+	width: 35%;
+margin: auto;
+}
+#login > * {
+	text-align: center;
+
+}
+#login h2{
+	margin-bottom: 20px;
+}
+#login form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#login label {
+	margin: 2em 0 1em 0;
+}
+#login textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.forget-password a {
+	text-decoration:underline;
+	color: black;
+}
+
+.footer-login {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
+	height: 60px;
+	background-color: white;
+	position: relative;
+  	top: 100px;
+}
