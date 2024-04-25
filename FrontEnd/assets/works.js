@@ -95,7 +95,7 @@ function authentification() {
     //Disparition des filtres
     let div_filters = document.querySelector(".filters");
     div_filters.style.display = "none";
-    let divInes = document.getElementById("ines2");
+    let divInes = document.getElementById("div_modification_title");
     divInes.classList.add("gap-filters");
 
     //Déconnexion après clic sur logout
