@@ -96,7 +96,7 @@ nav ul {
 
 }
 nav li {
-	padding: 0 10px;
+	padding: 0 20px;
 	font-size: 1.2em;
 }
 
@@ -183,6 +183,10 @@ li a:hover {
 .filter-selected {
 	color: #FFFEF8;
 	background-color: #1D6154;
+}
+
+.gap-filters {
+	padding: 50px 0 50px 0;
 }
 
 .gallery {
@@ -305,4 +309,50 @@ margin: auto;
 	color: red;
 	font-weight: 600;
 	padding-top: 20px;
+}
+
+.mode_edition {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: black;
+	height: 50px;
+	width: 100%;
+	margin-top: 0;
+}
+
+.fa-pen-to-square {
+	display: flex;
+	align-items: center;
+	color: white;
+	background-color: black;
+	height: 50px;
+	padding-right: 10px;
+}
+
+#edition {
+	margin-top:0;
+	display: none
+}
+
+.modification_project_title {
+	display: flex;
+	justify-content: center;
+}
+
+#modify_project{
+	display: none;
+	color:black;
+}
+
+#modify_project .fa-pen-to-square {
+	background-color: white;
+	color: black;
+	height: 15px;
+}
+
+#portfolio a {
+	padding: 10px 0 0 30px;
+	text-decoration: none;
 }

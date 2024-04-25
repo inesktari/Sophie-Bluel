@@ -28,7 +28,7 @@ function loginUser() {
     })
     .then((data) => {
       if (data) {
-        window.localStorage.setItem("token", "my_token");
+        sessionStorage.setItem("token", data.token);
         window.location.href = "index.html";
       }
     });

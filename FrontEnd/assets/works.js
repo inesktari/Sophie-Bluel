@@ -77,3 +77,34 @@ function removeSelectedClass() {
     buttons[i].classList.remove("filter-selected");
   }
 }
+
+function authentification() {
+  if (sessionStorage.getItem("token")) {
+    //Remplacement de login par logout
+    let loginBtn = document.getElementById("login");
+    loginBtn.textContent = "Logout";
+
+    //Apparition de la section de modification
+    let section_edition = document.getElementById("edition");
+    section_edition.style.display = "flex";
+
+    //Apparition de l'outil de modification
+    let div_modification = document.getElementById("modify_project");
+    div_modification.style.display = "flex";
+
+    //Disparition des filtres
+    let div_filters = document.querySelector(".filters");
+    div_filters.style.display = "none";
+    let divInes = document.getElementById("ines2");
+    divInes.classList.add("gap-filters");
+
+    //Déconnexion après clic sur logout
+    loginBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      sessionStorage.removeItem("token");
+      window.location.href = "index.html";
+    });
+  }
+}
+authentification();
+console.log("ines2");
