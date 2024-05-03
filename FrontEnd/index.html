@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/works.js" defer></script>
 	<script src="./assets/login.js" defer></script>
+	<script src="./assets/modal-gallery.js" defer></script>
 </head>
 <body>
 	<section id="edition">
@@ -47,10 +48,29 @@
 	<section id="portfolio">
 		<div class="modification_project_title" id="div_modification_title">
 			<h2>Mes projets</h2>
-			<a href="#" class="modification_project" id="modify_project">
+			<a href="#modal1" class="modification_project js-modal" id="modify_project">
 				<i class="fa-regular fa-pen-to-square"></i>modifier
 			</a>
 		</div>
+
+		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal" style="display: none;">
+			<div class="modal-wrapper js-modal-stop">
+				<div class="close-modal-x">
+					<button class="js-modal-close">
+					<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div id="titlemodal">Galerie photo</div>
+				<div class="gallery-modal"></div>
+				<div class="horizontal-line"></div>
+				<div class="botton-add-work">
+					<button class="filters-button filter-selected width-button-add-work">
+						Ajouter une photo
+					</button>
+				</div>
+			</div>
+		</aside>
+
 		
 		<div class="filters"></div>
 		

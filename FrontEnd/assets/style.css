@@ -356,3 +356,78 @@ margin: auto;
 	padding: 10px 0 0 30px;
 	text-decoration: none;
 }
+
+/* modale de la galerie */
+.modal {
+	position: fixed;
+	top:0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-items: center;
+	justify-content: center;
+	align-items: center;
+	animation: fadeIn 0.3s both;
+}
+
+.modal-wrapper {
+	background-color: #FFFEF8;
+	width: 720px;
+	height: 730px;
+	padding: 20px;
+	overflow: auto;
+	border-radius: 10px;
+	/* max-width: 100vw;
+	max-height: 100vw; */
+}
+
+@keyframes fadeIn {
+	from {opacity:0;}
+	to {opacity:1;}
+}
+
+/* #modal1 button */
+
+.js-modal-close {
+	border: none;
+	background-color: #FFFEF8;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.close-modal-x {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#titlemodal {
+	display: flex;
+	justify-content: center;
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.botton-add-work {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.width-button-add-work {
+	width: 300px;
+}
+
+.horizontal-line {
+	display: flex;
+	border-bottom: 1px solid grey;
+	/* width: 400px; */
+	margin: 80px 70px 50px 70px
+}
+
+.gallery-modal {
+	display: flex;
+	flex-wrap: wrap;
+}
