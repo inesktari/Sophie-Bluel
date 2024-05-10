@@ -1,4 +1,8 @@
+const gallery_modal = document.querySelector(".gallery-modal");
+
 let modal = null;
+
+const works_API_modal = "http://localhost:5678/api/works";
 
 const openModal = function (e) {
   e.preventDefault();
@@ -12,6 +16,31 @@ const openModal = function (e) {
   modal
     .querySelector(".js-modal-stop")
     .addEventListener("click", stopPropagation);
+
+  function createWork(work) {
+    let figure = document.createElement("figure");
+    let imageWork = document.createElement("img");
+    let deleteIcon = document.createElement("i");
+
+    imageWork.src = work.imageUrl;
+    deleteIcon.classList.add("fa-solid", "fa-trash-can");
+    deleteIcon.addEventListener("click", () => deleteImage(work.id));
+
+    figure.appendChild(imageWork);
+    figure.appendChild(deleteIcon);
+    gallery_modal.appendChild(figure);
+  }
+
+  fetch(works_API_modal).then((response) =>
+    response.json().then((works) => {
+      allWorks = works;
+      gallery_modal.innerHTML = "";
+
+      for (let i = 0; i < works.length; i++) {
+        let figure = createWork(works[i]);
+      }
+    })
+  );
 };
 
 const closeModal = function (e) {
