@@ -53,31 +53,61 @@
 			</a>
 		</div>
 
-		<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal" style="display: none;">
-			<div class="modal-wrapper js-modal-stop">
-				<div class="close-modal-x">
-					<button class="js-modal-close">
+		<aside id="modal1" class="modal" role="dialog" aria-labelledby="titlemodal">
+			
+			<div class="modal-wrapper js-modal-stop" id="editionGalleryModalId">
+				<div class="head-modal">
 					<i class="fa-solid fa-xmark"></i>
-					</button>
 				</div>
-				<div id="titlemodal">Galerie photo</div>
-
+				<div class="titlemodal">Galerie photo</div>
 				<div class="gallery-modal">
 					<figure>
 						<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
 					</figure>
 				</div>
-
 				<div class="horizontal-line"></div>
-				<div class="botton-add-work">
-					<button class="filters-button filter-selected width-button-add-work">
+				<div class="button-add-work">
+					<button href="#modal2" id="add-work" class="js-modal">
 						Ajouter une photo
 					</button>
 				</div>
 			</div>
-		</aside>
 
-		
+			<div class="modal-wrapper js-modal-stop" id="addWorkModalId">
+				<div class="head-modal">
+					<i class="fa-solid fa-arrow-left"></i>
+					<i class="fa-solid fa-xmark"></i>
+				</div>
+				<div class="titlemodal">Ajout photo</div>
+				<form action="#" method="post">
+					<div class="add-work-zone">
+						<div class="add-work-zone-1">
+							<img src="./assets/icons/image-regular.svg" alt="modele d'image "id="mmmmmmmmmm" />
+							<input type="file" id="myFile" name="image" accept=".jpg, .png" required />
+							<label id="myFileLabel" for="myFile">+ Ajouter photo</label>
+							<div id="myFileExtension">jpg, png : 4mo max</div>
+						</div>
+						<div class="add-work-zone-2">
+							<img src="#" alt="Aperçu de l'image" id="picturePreviewImg">
+						</div>
+					</div>
+
+					<div class="indexation">
+							<label id="title-work-label" for="title-work">Titre</label>
+							<input type="text" name="title-work" id="title-work" required>
+	
+							<label id="select_category_label" for="select_category">Catégorie</label>
+							<select type="category" name="select_category" id="select_category" required></select>
+					</div>
+				</form>
+				<div class="horizontal-line"></div>
+				<div class="submit-work">
+					<input type="submit" id="submit_work" value="Valider">
+				</div>
+
+			</div>
+		</aside>
+			
 		<div class="filters"></div>
 		
 		<div class="gallery">
