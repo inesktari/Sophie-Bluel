@@ -28,7 +28,7 @@ const openModal = function () {
 
     imageWork.src = work.imageUrl;
     deleteIcon.classList.add("fa-solid", "fa-trash-can");
-    deleteIcon.addEventListener("click", () => deleteWork(work.id, token));
+    deleteIcon.addEventListener("click", () => deleteWork(work.id));
 
     figure.appendChild(imageWork);
     figure.appendChild(deleteIcon);
@@ -92,6 +92,8 @@ window.onclick = function (event) {
 
 /* Fonction de suppression d'un work */
 async function deleteWork(workId) {
+  let token = sessionStorage.getItem("token");
+
   /* il faut ajouter la vérification du token */
   try {
     const confirmation = confirm(
@@ -202,7 +204,7 @@ const refreshWorks = function () {
 };
 
 /* Fonction d'upload d'un nouveau projet */
-const AddWork = function () {
+const AddWork = async function () {
   let token = sessionStorage.getItem("token");
 
   console.log("token=", token);
@@ -216,17 +218,17 @@ const AddWork = function () {
     method: "POST",
     headers: {
       accept: "application/json",
-      "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${token}`,
     },
     body: formData,
   }).then((response) => {
     if (response.status === 201) {
+      alert("succes.");
       resetPictureSelected();
       resetForm();
-      refreshWorks();
-      // refreshWorks(GALLERY_DIV, false);
-      // VERIFICATION();
+      // refreshWorks();
+      // refreshWorks();
+      // verifForm();
     } else if (response.status === 400) {
       alert("Veuillez renseigner tous les champs.");
     } else if (response.status === 401) {
