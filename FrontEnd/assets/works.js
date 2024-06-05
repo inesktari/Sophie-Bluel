@@ -87,25 +87,25 @@ function removeSelectedClass() {
 /* Fonction qui gére ce qui se passe lors de l'autentification */
 function authentification() {
   if (sessionStorage.getItem("token")) {
-    //Remplacement de login par logout
+    /* Remplacement de login par logout */
     let loginBtn = document.getElementById("login");
     loginBtn.textContent = "Logout";
 
-    //Apparition de la section de modification
+    /* Apparition de la section de modification */
     let section_edition = document.getElementById("edition");
     section_edition.style.display = "flex";
 
-    //Apparition de l'outil de modification
+    /* Apparition de l'outil de modification */
     let div_modification = document.getElementById("modify_project");
     div_modification.style.display = "flex";
 
-    //Disparition des filtres
+    /* Disparition des filtres */
     let div_filters = document.querySelector(".filters");
     div_filters.style.display = "none";
     let divInes = document.getElementById("div_modification_title");
     divInes.classList.add("gap-filters");
 
-    //Déconnexion après clic sur logout
+    /* Déconnexion après clic sur logout */
     loginBtn.addEventListener("click", function (event) {
       event.preventDefault();
       sessionStorage.removeItem("token");

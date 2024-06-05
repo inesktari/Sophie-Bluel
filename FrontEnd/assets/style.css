@@ -123,7 +123,7 @@ li a:hover {
 	align-items: center;
 }
 #introduction figure {
-	flex: 1
+	flex: 1;
 }
 #introduction img {
 	display: block;
@@ -202,8 +202,15 @@ li a:hover {
 
 .gallery img {
 	width: 100%;
-
+	object-fit: cover;
 }
+
+figcaption {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 300px;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
@@ -253,7 +260,7 @@ footer nav ul {
 	margin: 2em
 }
 
-/*page de login*/
+/* Page de connexion */
 
 #login {
 	width: 35%;
@@ -304,7 +311,6 @@ margin: auto;
 }
 
 #login_error {
-	/* display: flex; */
 	color: red;
 	font-weight: 600;
 	padding-top: 20px;
@@ -363,7 +369,6 @@ margin: auto;
 /* modale de la galerie */
 .modal {
 	position:absolute;
-	/* z-index: 1; */
 	top:0;
 	left: 0;
     width: 100%;
@@ -401,7 +406,6 @@ html {
 
 .head-modal {
 	display: flex;
-	/* align-items: center; */
 	color: black;
 	font-size: 19px;
 	width: 600px;
@@ -420,7 +424,6 @@ html {
 
 .fa-arrow-left {
   	font-size: 23px;
-  	/* width: 20px; */
 	cursor: pointer;
 }
 
@@ -438,7 +441,6 @@ html {
 	grid-column-gap: 10px;
 	grid-row-gap: 8px;
 	margin: 0 90px 10px 90px;
-	/* align-items: center; */
 }
 
 .gallery-modal img {
@@ -451,7 +453,6 @@ html {
 	align-items: center;
 	position:relative;
 	width: 260px;
-	/* width: 30%; */
 	height: 38px;
 	color: #FFFEF8;
 	background-color: #1D6154;
@@ -476,24 +477,22 @@ html {
 	border-bottom: 1px solid #B3B3B3;
 	margin: 45px 95px 5px 95px;
 	position: relative;
-	z-index: 3;
 }
 
 .fa-trash-can {
 	display: flex;
 	color:#FFFFFF;
 	background-color: black;
-	font-size: 10px;
-	width: 18px;
+	font-size: 80%;
+	width: 20%;
 	justify-content:center;
 	align-items: center;
 	border-radius: 2px;
-	padding: 4px 0 4px 0;
+	padding: 4px 1px 4px 1px;
 	cursor: pointer;
 	position: relative;
-	/* il faut les positionner en % dans l'image */
-	bottom: 106px;
-	left: 59px;
+	bottom: 81%;
+	left: 71%;
 }
 
 .gallery-modal i {
@@ -583,11 +582,11 @@ html {
 	width: 50%;
 }
 
+#addWorkModalId form {
+	font-family: 'Work Sans';
+}
+
 .indexation {
-	/* padding-left: 5%; */
-	/* margin-right: auto; */
-	/* margin-bottom: 15px;
-	margin-top: 20px; */
 	width: 70%;
 	justify-content: center;
 	align-items:flex-start;
@@ -598,38 +597,41 @@ html {
 
 #title-work {
 	height: 50px;
-	width: 100%;
-	font-size: 1.2em;
+	width: 92%;
+	font-family: inherit;
+	font-size: 14px;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 16px 0 16px;
 }
 
 #title-work-label {
-	margin-top: 20px;
-  	margin-bottom: 10px;
-	font-size: 15px;
+	margin: 20px 0 10px 0;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 #select_category_label {
-	margin-top: 20px;
-  	margin-bottom: 10px;
-	  font-size: 15px;
+	margin: 20px 0 10px 0;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 #select_category {
 	height: 50px;
 	width: 100%;
-	font-size: 1.2em;
+	font-family: inherit;
+	font-size: 14px;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 15px;
 	}
 
 .submit-work {
-	/* margin-bottom: 15px; */
 	margin-top: 5px;
 	display: flex;
 	flex-direction: column;
@@ -651,5 +653,4 @@ html {
 	font-weight:lighter;
 	text-decoration: none;
 	padding: 0 20px 0 20px;
-	cursor: pointer;
 }

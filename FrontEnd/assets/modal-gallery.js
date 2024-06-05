@@ -94,10 +94,9 @@ window.onclick = function (event) {
 async function deleteWork(workId) {
   let token = sessionStorage.getItem("token");
 
-  /* il faut ajouter la vérification du token */
   try {
     const confirmation = confirm(
-      "Êtes-vous sûr de vouloir supprimer cette photo ?"
+      "Êtes-vous sûr de vouloir supprimer ce projet ?"
     );
 
     if (confirmation) {
@@ -110,20 +109,17 @@ async function deleteWork(workId) {
         }).then((response) => {
           if (response.ok) {
             alert("Projet supprimé !");
-            // workId.remove();
-            // worksData = worksData.filter((work) => work.id != i);
-            // createWork(worksData);  sur la page d'acceuil et sur la modale
           } else {
             alert("Une erreur est survenue. Veuillez réesseyer.");
             closeModal;
           }
         });
       } catch (error) {
-        console.error("Erreur 2.");
+        console.error("Erreur 2");
       }
     }
   } catch (error) {
-    console.error("Erreur 3.");
+    console.error("Erreur 3");
   }
 }
 
@@ -138,13 +134,6 @@ function ModalAddWork(e) {
   picturePreviewZone.style.display = "none";
 }
 
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-// /* Bouton d'ajout d'une image d'un projet */
-// buttonAddFile.addEventListener("click", function () {
-//   fileInput.click();
-// });
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
 /* Sélection d'un projet */
 fileInput.addEventListener("change", function () {
   if (this.files[0].size > 4 * 1024 * 1024) {
@@ -155,7 +144,6 @@ fileInput.addEventListener("change", function () {
     picturePreviewImg.src = URL.createObjectURL(this.files[0]);
     picturePreviewZone.style.display = "block";
     pictureSelection.style.display = "none";
-    console.log("preview");
   }
 });
 
@@ -189,25 +177,9 @@ function GetCategories() {
   });
 }
 
-/* Fonction qui rafraichie la page d'acceuil après chaque modification */
-const refreshWorks = function () {
-  fetch(works_API_modal).then((response) =>
-    response.json().then((works) => {
-      allWorks = works;
-      gallery_modal.innerHTML = "";
-
-      for (let i = 0; i < works.length; i++) {
-        let figure = createWork(works[i]);
-      }
-    })
-  );
-};
-
 /* Fonction d'upload d'un nouveau projet */
 const AddWork = async function () {
   let token = sessionStorage.getItem("token");
-
-  console.log("token=", token);
 
   const formData = new FormData();
   formData.append("image", fileInput.files[0]);
@@ -223,21 +195,27 @@ const AddWork = async function () {
     body: formData,
   }).then((response) => {
     if (response.status === 201) {
-      alert("succes.");
+      alert("Projet importé avec succès.");
       resetPictureSelected();
       resetForm();
-      // refreshWorks();
-      // refreshWorks();
-      // verifForm();
-    } else if (response.status === 400) {
-      alert("Veuillez renseigner tous les champs.");
-    } else if (response.status === 401) {
-      alert("Vous n'êtes pas autorisés de faire des contributions.");
+      activBtnSubmit();
     } else {
       alert("Une erreur est survenue. Veuillez réessayer.");
     }
   });
 };
 
-/* Bouton d'ajout d'un projet */
-submitWork.addEventListener("click", AddWork);
+/* Activation du bouton de submit, pour envoyer le formulaire d'ajout d'un projet */
+const activBtnSubmit = function () {
+  if (fileInput.value != "" && titleWork.value != "") {
+    submitWork.style.backgroundColor = "#1D6154";
+    submitWork.style.cursor = "pointer";
+    submitWork.addEventListener("click", AddWork);
+  } else {
+    submitWork.style.backgroundColor = "#A7A7A7";
+    submitWork.style.cursor = "default";
+  }
+};
+
+fileInput.addEventListener("change", activBtnSubmit);
+titleWork.addEventListener("input", activBtnSubmit);
