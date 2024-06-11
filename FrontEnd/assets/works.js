@@ -76,7 +76,7 @@ function filterWork(categoryId) {
   }
 }
 
-/* Fonction qui change l'apparence d'un filtre désélectionné */
+/* Changement d'apparence d'un filtre désélectionné */
 function removeSelectedClass() {
   let buttons = document.querySelectorAll(".filters-button");
   for (let i = 0; i < buttons.length; i++) {
@@ -84,22 +84,18 @@ function removeSelectedClass() {
   }
 }
 
-/* Fonction qui gére ce qui se passe lors de l'autentification */
+/* Fonction qui gére les changements lors de l'autentification */
 function authentification() {
   if (sessionStorage.getItem("token")) {
-    /* Remplacement de login par logout */
     let loginBtn = document.getElementById("login");
     loginBtn.textContent = "Logout";
 
-    /* Apparition de la section de modification */
     let section_edition = document.getElementById("edition");
     section_edition.style.display = "flex";
 
-    /* Apparition de l'outil de modification */
     let div_modification = document.getElementById("modify_project");
     div_modification.style.display = "flex";
 
-    /* Disparition des filtres */
     let div_filters = document.querySelector(".filters");
     div_filters.style.display = "none";
     let divInes = document.getElementById("div_modification_title");

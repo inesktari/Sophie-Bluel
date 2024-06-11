@@ -20,7 +20,7 @@ const openModal = function () {
   addWorkModalId.style.display = "none";
   editionGalleryModalId.style.display = "flex";
 
-  /* Fonction qui crée les éléments de la galerie sur la modale */
+  /* Création des éléments de la galerie sur la modale */
   function createWork(work) {
     let figure = document.createElement("figure");
     let imageWork = document.createElement("img");
@@ -147,7 +147,7 @@ fileInput.addEventListener("change", function () {
   }
 });
 
-/* Réisitialisation de l'image sélectionnée */
+/* Réinitialisation de l'image sélectionnée */
 function resetPictureSelected() {
   fileInput.value = "";
   picturePreviewImg.src = "";
@@ -163,7 +163,6 @@ function resetForm() {
 
 /* Récupération des catégories depuis l'API */
 function GetCategories() {
-  /* Réinitialisation des catégories */
   selectCategory.innerHTML = "";
 
   /* Récupération des catégories */
@@ -199,8 +198,6 @@ const AddWork = async function () {
       resetPictureSelected();
       resetForm();
       activBtnSubmit();
-    } else {
-      alert("Une erreur est survenue. Veuillez réessayer.");
     }
   });
 };
@@ -214,8 +211,9 @@ const activBtnSubmit = function () {
   } else {
     submitWork.style.backgroundColor = "#A7A7A7";
     submitWork.style.cursor = "default";
+    submitWork.removeEventListener("click", AddWork);
   }
 };
 
 fileInput.addEventListener("change", activBtnSubmit);
-titleWork.addEventListener("input", activBtnSubmit);
+titleWork.addEventListener("change", activBtnSubmit);
