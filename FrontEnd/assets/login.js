@@ -22,8 +22,7 @@ function loginUser() {
         return response.json();
       } else {
         loginError = document.getElementById("login_error");
-        loginError.innerHTML =
-          "E-mail et/ou mot de passe incorrects. Veuillez réessayer";
+        loginError.innerHTML = "Erreur dans l’identifiant ou le mot de passe";
       }
     })
     .then((data) => {

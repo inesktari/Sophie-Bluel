@@ -46,11 +46,10 @@ const openModal = function () {
       }
     })
   );
-
-  modal.querySelector(".fa-xmark").addEventListener("click", closeModal);
   resetPictureSelected();
   resetForm();
   GetCategories();
+  modal.querySelector(".fa-xmark").addEventListener("click", closeModal);
 };
 
 /* Fonction de fermeture de la modale */
@@ -100,27 +99,26 @@ async function deleteWork(workId) {
     );
 
     if (confirmation) {
-      try {
-        fetch(works_API_modal + workId, {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }).then((response) => {
-          if (response.ok) {
-            alert("Projet supprimé !");
-          } else {
-            alert("Une erreur est survenue. Veuillez réesseyer.");
-            closeModal;
-          }
-        });
-      } catch (error) {
-        console.error("Erreur 2");
-      }
+      fetch(works_API_modal + workId, {
+        method: "DELETE",
+        headers: {
+          accept: "*/*",
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((response) => {
+        if (response.ok) {
+          console.log("projet supprimé");
+          // alert("Projet supprimé !");
+        } else {
+          alert("Une erreur est survenue. Veuillez réesseyer.");
+          closeModal();
+        }
+      });
     }
   } catch (error) {
     console.error("Erreur 3");
   }
+  return false;
 }
 
 /* Affichage de la modale d'ajout d'un projet au clic sur le bouton d'ajout */
@@ -177,7 +175,8 @@ function GetCategories() {
 }
 
 /* Fonction d'upload d'un nouveau projet */
-const AddWork = async function () {
+const AddWork = async function (event) {
+  event.preventDefault();
   let token = sessionStorage.getItem("token");
 
   const formData = new FormData();
@@ -200,6 +199,7 @@ const AddWork = async function () {
       activBtnSubmit();
     }
   });
+  return false;
 };
 
 /* Activation du bouton de submit, pour envoyer le formulaire d'ajout d'un projet */

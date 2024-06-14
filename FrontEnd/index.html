@@ -48,9 +48,9 @@
 	<section id="portfolio">
 		<div class="modification_project_title" id="div_modification_title">
 			<h2>Mes projets</h2>
-			<a href="#modal1" class="modification_project js-modal" id="modify_project">
+			<div  class="modification_project js-modal" id="modify_project">
 				<i class="fa-regular fa-pen-to-square"></i>modifier
-			</a>
+			</div>
 		</div>
 
 		<aside id="modal1" class="modal" role="dialog">
@@ -67,7 +67,7 @@
 				</div>
 				<div class="horizontal-line"></div>
 				<div class="button-add-work">
-					<button href="#modal2" id="add-work" class="js-modal">
+					<button id="add-work">
 						Ajouter une photo
 					</button>
 				</div>
@@ -79,7 +79,7 @@
 					<i class="fa-solid fa-xmark"></i>
 				</div>
 				<div class="titlemodal">Ajout photo</div>
-				<form action="#" method="post">
+				<form method="post">
 					<div class="add-work-zone">
 						<div class="add-work-zone-1">
 							<img src="./assets/icons/image-regular.svg" alt="modele d'image"/>
@@ -102,7 +102,7 @@
 				</form>
 				<div class="horizontal-line"></div>
 				<div class="submit-work">
-					<input type="submit" id="submit_work" value="Valider">
+					<input type="button" id="submit_work" value="Valider">
 				</div>
 
 			</div>
