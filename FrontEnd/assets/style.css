@@ -350,9 +350,19 @@ margin: auto;
 	justify-content: center;
 }
 
+.modification_project_title h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* position: relative; */
+}
+
 #modify_project{
 	display: none;
 	color:black;
+	padding-left: 20px;
+	padding-top:8px;
+	justify-content: center;
 }
 
 #modify_project .fa-pen-to-square {
@@ -632,9 +642,11 @@ html {
 	}
 
 .submit-work {
-	margin-top: 5px;
+	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #submit_work {
