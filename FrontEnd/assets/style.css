@@ -402,7 +402,7 @@ html {
 	align-items: center;
 	background-color: #FFFEF8;
 	width: 640px;
-	height: 688px;
+	height: 670px;
 	padding: 20px;
 	margin-top: 590px;
 	overflow:auto;
@@ -442,7 +442,7 @@ html {
 	justify-content: center;
 	font-size: 27px;
 	color: black;
-	margin: 20px 0 50px 0;
+	margin: 15px 0 45px 0;
 }
 
 .gallery-modal {
@@ -483,10 +483,11 @@ html {
 }
 
 .horizontal-line {
-	display: flex;
+	/* display: flex; */
 	border-bottom: 1px solid #B3B3B3;
-	margin: 45px 95px 5px 95px;
-	position: relative;
+	margin: 30px 95px 35px 95px;
+	width:70%;
+	/* position: relative; */
 }
 
 .fa-trash-can {
@@ -594,6 +595,7 @@ html {
 
 #addWorkModalId form {
 	font-family: 'Work Sans';
+	padding-bottom: 5px;
 }
 
 .indexation {
@@ -606,7 +608,7 @@ html {
   }
 
 #title-work {
-	height: 50px;
+	height: 51px;
 	width: 92%;
 	font-family: inherit;
 	font-size: 14px;
@@ -630,7 +632,7 @@ html {
 }
 
 #select_category {
-	height: 50px;
+	height: 51px;
 	width: 100%;
 	font-family: inherit;
 	font-size: 14px;
@@ -639,10 +641,11 @@ html {
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 15px;
+	background-color: white;
 	}
 
 .submit-work {
-	margin-top: 50px;
+	margin-top: 45px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -655,7 +658,7 @@ html {
 	align-items: center;
 	position:relative;
 	width: 260px;
-	height: 38px;
+	height: 36px;
 	color: #FFFFFF;
 	background-color: #A7A7A7;
 	border: none;

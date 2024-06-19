@@ -10,7 +10,6 @@ const picturePreviewImg = document.querySelector("#picturePreviewImg");
 const pictureSelection = document.querySelector(".add-work-zone-1");
 const picturePreviewZone = document.querySelector(".add-work-zone-2");
 const buttonAddFile = document.querySelector("#myFileLabel");
-
 let modal = null;
 
 /* Fonction d'ouverture de la modale */
@@ -103,16 +102,14 @@ async function deleteWork(workId) {
         fetch(works_API_modal + workId, {
           method: "DELETE",
           headers: {
-            // accept: "*/*",
+            accept: "*/*",
             Authorization: `Bearer ${token}`,
           },
         }).then((response) => {
           if (response.ok) {
-            alert("Projet supprimé !");
-            // closeModal();
+            console.log("Projet supprimé !");
           } else {
             alert("Une erreur est survenue. Veuillez réesseyer.");
-            // closeModal();
           }
           closeModal();
           loadWorks();
@@ -163,6 +160,7 @@ function resetPictureSelected() {
 function resetForm() {
   selectCategory.value = "";
   titleWork.value = "";
+  titleError = "";
 }
 
 /* Récupération des catégories depuis l'API */
@@ -199,7 +197,7 @@ const AddWork = async function () {
     body: formData,
   }).then((response) => {
     if (response.status === 201) {
-      alert("Projet importé avec succès.");
+      console.log("Projet importé avec succès.");
       resetPictureSelected();
       resetForm();
       activBtnSubmit();
@@ -207,7 +205,6 @@ const AddWork = async function () {
       loadWorks();
     }
   });
-  // return false;
 };
 
 /* Activation du bouton de submit, pour envoyer le formulaire d'ajout d'un projet */
@@ -222,6 +219,5 @@ const activBtnSubmit = function () {
     submitWork.removeEventListener("click", AddWork);
   }
 };
-
 fileInput.addEventListener("change", activBtnSubmit);
-titleWork.addEventListener("change", activBtnSubmit);
+titleWork.addEventListener("input", activBtnSubmit);

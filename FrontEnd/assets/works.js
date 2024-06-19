@@ -22,17 +22,6 @@ function loadWorks() {
   );
 }
 
-/*
-fetch(works_API).then((response) =>
-  response.json().then((works) => {
-    allWorks = works;
-    for (let i = 0; i < works.length; i++) {
-      let figure = createWork(works[i]);
-    }
-  })
-);
-*/
-
 /* Création des balises des travaux récupérés de l'API, et les rattacher au DOM */
 function createWork(work) {
   if (gallery) {
