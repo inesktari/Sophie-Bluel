@@ -354,7 +354,6 @@ margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* position: relative; */
 }
 
 #modify_project{
@@ -363,6 +362,7 @@ margin: auto;
 	padding-left: 20px;
 	padding-top:8px;
 	justify-content: center;
+	cursor: pointer;
 }
 
 #modify_project .fa-pen-to-square {
@@ -483,11 +483,9 @@ html {
 }
 
 .horizontal-line {
-	/* display: flex; */
 	border-bottom: 1px solid #B3B3B3;
 	margin: 30px 95px 35px 95px;
 	width:70%;
-	/* position: relative; */
 }
 
 .fa-trash-can {

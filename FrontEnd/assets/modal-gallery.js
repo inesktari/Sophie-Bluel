@@ -160,7 +160,6 @@ function resetPictureSelected() {
 function resetForm() {
   selectCategory.value = "";
   titleWork.value = "";
-  titleError = "";
 }
 
 /* Récupération des catégories depuis l'API */
@@ -180,7 +179,6 @@ function GetCategories() {
 
 /* Fonction d'upload d'un nouveau projet */
 const AddWork = async function () {
-  // event.preventDefault();
   let token = sessionStorage.getItem("token");
 
   const formData = new FormData();
@@ -203,6 +201,11 @@ const AddWork = async function () {
       activBtnSubmit();
       closeModal();
       loadWorks();
+    } else {
+      console.error(
+        "Tous les champs sont obligatoires. Veuillez les renseigner.",
+        error
+      );
     }
   });
 };
