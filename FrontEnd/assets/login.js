@@ -30,5 +30,8 @@ function loginUser() {
         sessionStorage.setItem("token", data.token);
         window.location.href = "index.html";
       }
+    })
+    .catch((error) => {
+      console.error("Une erreur est survenue:", error);
     });
 }
